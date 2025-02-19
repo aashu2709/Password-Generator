@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 
 
 function App() {
@@ -13,7 +13,8 @@ function App() {
 
  
 
-    
+    //useRef hook
+    const passwordRef = useRef(null)
 
     const passwordGenerator  = useCallback(()=>{
       let pass = ""
@@ -52,7 +53,7 @@ function App() {
             className="outline-none w-full py-1 px-3 bg-white"
             placeholder="Password" 
             readOnly
-            
+            ref={passwordRef}
         />
         <button 
         onClick={copyPasswordToClipboard}
